@@ -1,0 +1,96 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Control Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title-with-logo">
+            Drone Control Panel
+            <img src="dron-log.png" alt="Drone Logo" class="logo">
+        </h1>
+         <!-- Logo Section -->
+        <div class="control-grid">
+            <!-- Left Side Controls -->
+            <div class="left-side">
+                <!-- Coordinates Input -->
+               <div class="lat-lon card">
+                    <h2>Input Coordinates</h2>
+                    <form>
+                        <div class="input-group">
+                            <label for="latitude" style="font-size: 20px;">Latitude:</label>
+                            <div class="input-with-icon">
+                                <input type="text" id="latitude" placeholder="e.g., 37.7749" required>
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="longitude" style="font-size: 20px;">Longitude:</label>
+                            <div class="input-with-icon">
+                                <input type="text" id="longitude" placeholder="e.g., -122.4194" required>
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Launch and Land Buttons -->
+                <div class="actions card">
+                    <h2>Actions</h2>
+                    <button id="launch-btn">Takeoff</button>
+                    <button id="land-btn">Land</button>
+                    
+                    <!-- Moved Create Drone Order button here -->
+                    <a href="create_drone_orders.php">
+                        <button class="action-btn">CreateOrder</button>
+                    </a>
+                </div>
+                
+                <!-- GPS & Battery Information -->
+                <div class="gps-status card">
+                    <h2>GPS & Status</h2>
+                    <p id="gps-coordinates">GPS: N/A</p>
+                    <p id="battery-status">Battery: 75%</p>
+                    <p id="flight-efficiency">Efficiency: High</p>
+                </div>
+                
+                <!-- Airspace Regulations -->
+                <div class="regulations card">
+                    <h2>Regulations</h2>
+                    <p id="no-fly-zone">No-fly zones: None</p>
+                </div>
+                
+                <!-- Obstacle Alerts -->
+                <div class="obstacle-alerts card">
+                    <h2>Obstacle Alerts</h2>
+                    <p id="obstacle-alerts">No obstacles</p>
+                </div>
+            </div>
+            
+            <!-- Right Side Camera View -->
+            <div class="camera-section card">
+                <h2>Camera View</h2>
+                <div id="camera-view">
+                    <p>Live feed unavailable</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Drone element for animation -->
+    <div id="drone-box">
+        <img src="drone.png" class="drone-img">
+        <img src="drone-left.png" class="drone-left">
+        <img src="drone-right.png" class="drone-right">
+    </div>
+
+    <!-- External JS file -->
+    <script src="script.js"></script>
+</body>
+</html>
